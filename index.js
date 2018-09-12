@@ -49,6 +49,10 @@ const LickingValley = 43;
 const Dover = 44;
 const FranklinMonroe = 45;
 const StFrancisDeSales = 46;
+const Maysville = 47;
+const FranklinHeights = 48;
+const TreeOfLifeSchool = 49;
+const HamiltonTownship = 50;
 
 network.train([
 
@@ -73,6 +77,7 @@ network.train([
  { input: [JohnstownMonroe, Heath], output: [0]}, //Aug 30
  { input: [JohnstownMonroe, Fairbanks], output: [1]}, //Sep 4
  { input: [JohnstownMonroe, LickingValley], output: [0]}, //Sep 6
+ { input: [JohnstownMonroe, Pleasant], output: [0]}, //Sep 10
 
 // ============================================== BISHOP HARTLEY ======================================= \\
 
@@ -117,6 +122,7 @@ network.train([
  { input: [BishopRosecrans, ColumbusAcademy], output: [1]}, // Aug 29
  { input: [BishopRosecrans, RiverView], output: [0]}, // Sep 3
  { input: [BishopRosecrans, Dover], output: [0]}, // Sep 6
+ { input: [BishopRosecrans, Maysville], output: [0]}, // Sep 11
 
 // ========================================== MIAMI VALLEY SCHOOL ======================== \\
 
@@ -132,7 +138,7 @@ network.train([
  { input: [Fairbanks, ColumbusAcademy], output: [1]},// Aug 25
  { input: [Fairbanks, MadisonPlains], output: [0]},// Aug 30
  { input: [Fairbanks, JohnstownMonroe], output: [0]},// Sep 4
-
+ { input: [Fairbanks, GrandviewHeights], output: [0]},// Sep 10
 
 // ================================ GRANDVIEW HEIGHTS ================== \\
 
@@ -140,6 +146,7 @@ network.train([
  { input: [GrandviewHeights, WorthingtonKilbourne], output: [1]}, // Aug 23
  { input: [GrandviewHeights, MansfieldChristianSchool], output: [0]}, // Sep 1
  { input: [GrandviewHeights, WhitehallYearling], output: [0]}, // Sep 5
+ { input: [GrandviewHeights, Fairbanks], output: [0]}, // Sep 10
 
 // ==================================== LANCASTER ====================== \\
 
@@ -148,6 +155,7 @@ network.train([
  { input: [Lancaster, Newark], output: [1]}, // Aug 28
  { input: [Lancaster, CentralCrossing], output: [1]}, // Aug 30
  { input: [Lancaster, GroveportMadison], output: [0]}, // Sep 4
+ { input: [Lancaster, Circleville], output: [0]}, // Sep 11
 
 // ==================================== BEXLEY ======================= \\
 
@@ -160,6 +168,7 @@ network.train([
  { input: [BishopReady, ColumbusAcademy], output: [1]}, // Aug 23
  { input: [BishopReady, London], output: [0]}, // Aug 30
  { input: [BishopReady, StFrancisDeSales], output: [1]}, // Sep 6
+ { input: [BishopReady, FranklinHeights], output: [0]}, // Sep 11
 
 // ============================= FISHER CATHOLIC ===================== \\
 
@@ -167,6 +176,8 @@ network.train([
  { input: [FisherCatholic, Fairbanks], output: [1]}, //Aug 21
  { input: [FisherCatholic, ColumbusSchoolForGirls], output: [1]}, //Aug 30
  { input: [FisherCatholic, BloomCarroll], output: [1]}, //Sep 5
+ { input: [FisherCatholic, TreeOfLifeSchool], output: [0]}, //Sep 10
+ { input: [FisherCatholic, HamiltonTownship], output: [0]}, //Sep 11
 
 // ============================= CENTRAL CROSSING ==================== \\
 
@@ -182,11 +193,11 @@ network.train([
 //Aug 27 wrong 1%
 //Aug 30 correct 79%
 //Sep 6 wrong 64%
-//Sep 10 90%
+//Sep 12 89%
 //Wrong: 3
 //Correct: 1
 
-const output = network.run([ColumbusSchoolForGirls, TheWellingtonSchool]); //Chance of wellington winning
+const output = network.run([WhitehallYearling, TheWellingtonSchool]); //Chance of wellington winning
 let fullOutput = output * 100
 
 if (fullOutput >=50) {
